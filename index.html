@@ -14,15 +14,19 @@
     <span class="units">KM/H</span>
   </h1>
 
+  <div class="debugger"></div>
+
 
   <script>
     const arrow = document.querySelector('.arrow')
     const speed = document.querySelector('.speed-value')
+    const debugbox = document.querySelector('.debugger')
 
     navigator.geolocation.watchPosition((data) => {
       console.log(data)
       speed.textContent = data.coords.speed
       arrow.style.transform = `rotate(${data.coords.heading}deg)`
+      debugbox.textContent = data
     }, (err) => {
       console.err(err)
       alert('hey!')
