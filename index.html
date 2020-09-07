@@ -26,7 +26,7 @@
       console.log(data)
       speed.textContent = data.coords.speed
       arrow.style.transform = `rotate(${data.coords.heading}deg)`
-      debugbox.textContent = data
+      debugbox.textContent = `lat: ${data.coords.latitude} lon: ${data.coords.longitude}`
     }, (err) => {
       console.err(err)
       alert('hey!')
@@ -74,6 +74,11 @@
 
   .units {
     font-size: 15px;
+  }
+
+  .debugger {
+    color: gainsboro;
+    font-size: 16px;
   }
   /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
 </style>
